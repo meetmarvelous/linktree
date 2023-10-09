@@ -1,6 +1,6 @@
 
 body {
-  background-image: url(../images/gif7.gif); /* The image used for background*/
+  background-image: url(../images/gif.gif); /* The image used for background*/
   background-repeat: no-repeat; /* Do not repeat the image */
   background-position: center; /* Center the image */
   background-size: cover; /* Resize the background image to cover the entire container */
