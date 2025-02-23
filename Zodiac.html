@@ -1,0 +1,220 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zodiac Sign Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Zodiac Sign Finder</h1>
+    <form id="zodiac-form">
+        <label for="month">Select your birth month:</label>
+        <select id="month" name="month">
+            <option value="">Select a month</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+        <button id="submit-btn">Find Your Zodiac Sign</button>
+    </form>
+    <div id="result"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#zodiac-form {
+    margin-top: 20px;
+}
+
+#month {
+    padding: 10px;
+    font-size: 16px;
+}
+
+#submit-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submit-btn:hover {
+    background-color: #3e8e41;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#result h2 {
+    margin-bottom: 10px;
+}
+
+#result ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#result li {
+    margin-bottom: 10px;
+}
+</style>
+
+©Ogunyelu praise production
+<script>const form = document.getElementById('zodiac-form');
+const monthSelect = document.getElementById('month');
+const resultDiv = document.getElementById('result');
+
+const zodiacSigns = {
+    "1": {
+        sign: "Capricorn",
+        dates: "Jan 1 - 19",
+        traits: [
+  
+            "Disciplined",
+            "Responsible",
+            "Ambitious"
+        ]
+    },
+    "2": {
+        sign: "Aquarius",
+        dates: "Jan 20 - 31",
+        traits: [
+            "Humanitarian",
+            "Independent",
+            "Unconventional"
+        ]
+    },
+    "3": {
+        sign: "Pisces",
+        dates: "Feb 19 - Mar 20",
+        traits: [
+            "Compassionate",
+            "Imaginative",
+            "Sensitive"
+        ]
+    },
+    "4": {
+        sign: "Aries",
+        dates: "Mar 21 - Apr 19",
+        traits: [
+            "Adventurous",
+            "Confident",
+            "Determined"
+        ]
+    },
+    "5": {
+        sign: "Taurus",
+        dates: "Apr 20 - May 20",
+        traits: [
+            "Reliable",
+            "Practical",
+            "Sensual"
+        ]
+    },
+    "6": {
+        sign: "Gemini",
+        dates: "May 21 - Jun 20",
+        traits: [
+            "Communicative",
+            "Versatile",
+            "Unpredictable"
+        ]
+    },
+    "7": {
+        sign: "Cancer",
+        dates: "Jun 21 - Jul 22",
+        traits: [
+            "Emotional",
+            "Loyal",
+            "Protective"
+        ]
+    },
+    "8": {
+        sign: "Leo",
+        dates: "Jul 23 - Aug 22",
+        traits: [
+            "Confident",
+            "Generous",
+            "Prideful"
+        ]
+    },
+    "9": {
+        sign: "Virgo",
+        dates: "Aug 23 - Sep 22",
+        traits: [
+            "Analytical",
+            "Practical",
+            "Perfectionistic"
+        ]
+    },
+      "10": {
+        sign: "Libra",
+        dates: "Sep 23 - Oct 22",
+        traits: [
+            "Diplomatic",
+            "Social",
+            "Balanced"
+        ]
+    },
+    "11": {
+        sign: "Scorpio",
+        dates: "Oct 23 - Nov 21",
+        traits: [
+            "Passionate",
+            "Intense",
+            "Secretive"
+        ]
+    },
+    "12": {
+        sign: "Sagittarius",
+        dates: "Nov 22 - Dec 21",
+        traits: [
+            "Adventurous",
+            "Optimistic",
+            "Freedom-loving"
+        ]
+    }
+};
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const month = monthSelect.value;
+    const zodiacSign = zodiacSigns[month];
+    if (zodiacSign) {
+        const resultHTML = `
+            <h2>Your Zodiac Sign is: ${zodiacSign.sign} (${zodiacSign.dates})</h2>
+            <ul>
+                ${zodiacSign.traits.map(trait => `<li>${trait}</li>`).join('')}
+            </ul>
+        `;
+        resultDiv.innerHTML = resultHTML;
+    } else {
+        resultDiv.innerHTML = 'Please select a month';
+    }
+});
+</script>
